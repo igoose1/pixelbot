@@ -21,7 +21,7 @@ function PixelBot() {
     PixelBot.pts = 60;
     PixelBot.v = 0.74;
     PixelBot.tc = "rgb(0, 0, 0)";
-    PixelBot.src = "https://s8.hostingkartinok.com/uploads/images/2017/11/cdc5b196ac99894d489518dcddd518ad.png";
+    PixelBot.src = "http://62.109.17.167/files/li7.png";
 
     PixelBot.state = document.createElement("div");
     PixelBot.state.textContent = "Загрузка приложения...";
