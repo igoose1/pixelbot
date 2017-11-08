@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.74
 // @description  try to take over the world!
-// @author       Flyink13
+// @author       Flyink13, igoose
 // @match        https://pixel.vkforms.ru/*
 // @downloadURL  https://fs.flyink.ru/pixelus.js
 // @updateURL    https://fs.flyink.ru/pixelus.js
