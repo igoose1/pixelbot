@@ -5,8 +5,8 @@
 // @description  try to take over the world!
 // @author       Flyink13, igoose
 // @match        https://pixel.vkforms.ru/*
-// @downloadURL  https://fs.flyink.ru/pixelus.js
-// @updateURL    https://fs.flyink.ru/pixelus.js
+// @downloadURL  https://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.js
+// @updateURL    https://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.js
 // @grant        none
 // ==/UserScript==
 
