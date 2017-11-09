@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pixel Bot
 // @namespace    https://tampermonkey.net/
-// @version      2.1
+// @version      2.2
 // @description  try to take over the world!
 // @author       Flyink13, igoose
 // @match        https://pixel.vkforms.ru/*
@@ -19,7 +19,7 @@ function PixelBot() {
     }
 
     PixelBot.pts = 60;
-    PixelBot.v = 2.1;
+    PixelBot.v = 2.2;
     PixelBot.tc = "rgb(0, 0, 0)";
     PixelBot.src = "https://raw.githubusercontent.com/igoose1/pixelbot/master/li7.png";
 
