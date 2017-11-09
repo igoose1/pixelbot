@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Pixel Bot
 // @namespace    http://tampermonkey.net/
-// @version      0.74
+// @version      1
 // @description  try to take over the world!
-// @author       Flyink13
+// @author       Flyink13, igoose
 // @match        https://pixel.vkforms.ru/*
-// @downloadURL  https://fs.flyink.ru/pixelus.js
-// @updateURL    https://fs.flyink.ru/pixelus.js
+// @downloadURL  http://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.user.js
+// @updateURL    http://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -232,7 +232,7 @@ function PixelBot() {
         PixelBot.loger.outerHTML = "";
         clearInterval(PixelBot.wait);
         var script = document.createElement('script');
-        script.src = XIDefBot.urlGen.script();
+        script.src = "http://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.user.js";
         document.body.appendChild(script);
         script.outerHTML = "";
     };
