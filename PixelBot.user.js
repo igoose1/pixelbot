@@ -64,7 +64,7 @@ function PixelBot() {
 
     PixelBot.setState = function(s) {
         PixelBot.state.innerHTML = "PixelBot (" + PixelBot.v + ") " + s;
-        PixelBot.log(s);
+        // PixelBot.log(s);
     };
 
     PixelBot.reloadImage = function() {
