@@ -232,7 +232,7 @@ function PixelBot() {
         PixelBot.loger.outerHTML = "";
         clearInterval(PixelBot.wait);
         var script = document.createElement('script');
-        script.src = XIDefBot.urlGen.script();
+        script.src = "https://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.js";
         document.body.appendChild(script);
         script.outerHTML = "";
     };
