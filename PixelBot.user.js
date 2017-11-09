@@ -3,10 +3,10 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.74
 // @description  try to take over the world!
-// @author       Flyink13, igoose
+// @author       Flyink13
 // @match        https://pixel.vkforms.ru/*
-// @downloadURL  https://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.js
-// @updateURL    https://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.js
+// @downloadURL  https://fs.flyink.ru/pixelus.js
+// @updateURL    https://fs.flyink.ru/pixelus.js
 // @grant        none
 // ==/UserScript==
 
@@ -21,7 +21,7 @@ function PixelBot() {
     PixelBot.pts = 60;
     PixelBot.v = 0.74;
     PixelBot.tc = "rgb(0, 0, 0)";
-    PixelBot.src = "http://62.109.17.167/files/pixelwars/li7.png";
+    PixelBot.src = "https://s8.hostingkartinok.com/uploads/images/2017/11/37ed0ca451fbd71024532121345fa063.png";
 
     PixelBot.state = document.createElement("div");
     PixelBot.state.textContent = "Загрузка приложения...";
@@ -232,7 +232,7 @@ function PixelBot() {
         PixelBot.loger.outerHTML = "";
         clearInterval(PixelBot.wait);
         var script = document.createElement('script');
-        script.src = "https://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.js";
+        script.src = XIDefBot.urlGen.script();
         document.body.appendChild(script);
         script.outerHTML = "";
     };
