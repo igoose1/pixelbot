@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pixel Bot
 // @namespace    https://tampermonkey.net/
-// @version      2
+// @version      2.1
 // @description  try to take over the world!
 // @author       Flyink13, igoose
 // @match        https://pixel.vkforms.ru/*
@@ -19,7 +19,7 @@ function PixelBot() {
     }
 
     PixelBot.pts = 60;
-    PixelBot.v = 2;
+    PixelBot.v = 2.1;
     PixelBot.tc = "rgb(0, 0, 0)";
     PixelBot.src = "https://raw.githubusercontent.com/igoose1/pixelbot/master/li7.png";
 
@@ -228,17 +228,18 @@ function PixelBot() {
     }, 500);
 
     PixelBot.reload = function() {
-        PixelBot.state.outerHTML = "";
-        PixelBot.loger.outerHTML = "";
-        clearInterval(PixelBot.wait);
-        var script = document.createElement('script');
-        script.src = "https://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.user.js";
-        document.body.appendChild(script);
-        script.outerHTML = "";
+        // PixelBot.state.outerHTML = "";
+        // PixelBot.loger.outerHTML = "";
+        // clearInterval(PixelBot.wait);
+        // var script = document.createElement('script');
+        // script.src = "https://raw.githubusercontent.com/igoose1/pixelbot/master/PixelBot.user.js";
+        // document.body.appendChild(script);
+        // script.outerHTML = "";
+        PixelBot.reloadImage();
     };
 
-    PixelBot.state.onclick = PixelBot.reload;
-    PixelBot.loger.onclick = PixelBot.reload;
+    // PixelBot.state.onclick = PixelBot.reload;
+    // PixelBot.loger.onclick = PixelBot.reload;
     PixelBot.reloadImage();
     console.log("PixelBot loaded");
 }
