@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pixel Bot
 // @namespace    https://tampermonkey.net/
-// @version      2.3
+// @version      3.0
 // @description  try to take over the world!
 // @author       Flyink13, igoose
 // @match        https://pixel.vkforms.ru/*
@@ -19,12 +19,13 @@ function PixelBot() {
     }
 
     PixelBot.pts = 60;
-    PixelBot.v = 2.3;
+    PixelBot.v = 3.0;
     PixelBot.tc = "rgb(0, 0, 0)";
     PixelBot.src = "https://raw.githubusercontent.com/igoose1/pixelbot/master/li7.png";
 
     PixelBot.state = document.createElement("div");
     PixelBot.state.textContent = "Загрузка приложения...";
+    console.log("Загрузка приложения...");
     Object.assign(PixelBot.state.style, {
         background: "rgba(0,0,0,0.5)",
         top: "0px",
@@ -96,7 +97,7 @@ function PixelBot() {
                 .sort(function (a, b) { return b[0] - a[0]; });
 
             canvas = ctx = null;
-            PixelBot.setState("перезагрузил зону защиты." + PixelBot.pixs.length + "px");
+            console.log("перезагрузил зону защиты." + PixelBot.pixs.length + "px");
         };
         PixelBot.img.src = PixelBot.src + "?r=" + Math.random();
         PixelBot.img2.src = "https://pixel.vkforms.ru/data/1.bmp?r=" + Math.random();
@@ -143,13 +144,13 @@ function PixelBot() {
         qe(".App__confirm button").click();
         var xy = document.querySelectorAll(".App__statistic .value")[1].textContent;
         console.log(x + "x" + y + "%c " + pxColor + " > %c " + color + " " + xy, 'background:' + pxColor + ';', 'background:' + color + ';');
-        PixelBot.setState("поставил точку " + x + "x" + y + " " + xy);
+        console.log("поставил точку " + x + "x" + y + " " + xy);
     };
 
     PixelBot.draw = function() {
         var px = 0;
         if (!PixelBot.pixs.length) {
-            PixelBot.setState("точек нет");
+            console.log("точек нет");
         } else {
             if (PixelBot.pixs.length < 5) {
                 px = PixelBot.pixs.shift();
@@ -160,9 +161,9 @@ function PixelBot() {
         }
     };
 
-    alert = function() {
-        location.reload();
-    };
+    //alert = function() {
+    //    location.reload();
+    //};
 
     PixelBot.canvasMove = function(x, y) {
         var q = {
@@ -204,21 +205,26 @@ function PixelBot() {
 
     PixelBot.init = function() {
         PixelBot.inited = 1;
-        PixelBot.setState("запущен.");
+        console.log("запущен.");
     };
 
     PixelBot.wait = setInterval(function() {
         if (!PixelBot.inited && PixelBot.canvas) {
+            // console.log('hm 1')
             PixelBot.ctx = PixelBot.canvas.getContext("2d");
             PixelBot.init();
         } else if (!PixelBot.pts) {
+            // console.log('hm 2')
             PixelBot.reload();
             PixelBot.pts = 60;
         } else if (PixelBot.canvas && PixelBot.isTimer()) {
+            // console.log('hm 3')
             PixelBot.timer = 1;
         } else if (!PixelBot.canvas) {
-            PixelBot.canvas = document.querySelectorAll("canvas")[1];
+            // console.log('hm 4')
+            PixelBot.canvas = Array.prototype.slice.call(document.querySelectorAll('canvas'))[0];
         } else if (!PixelBot.pts) {
+            // console.log('hm 5')
             PixelBot.reload();
             PixelBot.pts = 60;
         } else if (PixelBot.inited && PixelBot.canvas) {
@@ -244,11 +250,21 @@ function PixelBot() {
     console.log("PixelBot loaded");
 }
 
-if (window.loaded) PixelBot();
-window.addEventListener("load", function() {
-    window.loaded = 1;
-    var script = document.createElement('script');
-    script.appendChild(document.createTextNode('(' + PixelBot + ')();'));
-    (document.body || document.head || document.documentElement).appendChild(script);
-    script.outerHTML = "";
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+sleep(2000).then(() => {
+    // var script = document.createElement('script');
+    // script.appendChild(document.createTextNode('(' + PixelBot + ')();'));
+    // (document.body || document.head || document.documentElement).appendChild(script);
+    // script.outerHTML = "";
+    PixelBot();
 });
+// window.addEventListener("load", function() {
+//     window.loaded = 1;
+//     var script = document.createElement('script');
+//     script.appendChild(document.createTextNode('(' + PixelBot + ')();'));
+//     (document.body || document.head || document.documentElement).appendChild(script);
+//     script.outerHTML = "";
+// });
